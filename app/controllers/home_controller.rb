@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    binding.pry
-    @reads = Read.top_ten
+    @reads = Read.all
   end
 
 end
