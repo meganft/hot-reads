@@ -3,7 +3,8 @@ class Api::V1::ReadsController < ApplicationController
 
   def create
     puts params.inspect
-    @read = Read.create(title: params[:linkId][:title], url: params[:linkId][:url])
+    read = Read.find_or_create_by(id: params[:linkId])
+    # @read = Read.create(title: params[:linkId][:title], url: params[:linkId][:url])
     render json: @read, status: 200
   end
 
