@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @reads = Read.top_ten
+    @reads = Read.all
   end
 
 end
